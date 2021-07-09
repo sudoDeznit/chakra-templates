@@ -12,6 +12,7 @@ import {
   Link,
   Drawer,
   DrawerContent,
+  DrawerOverlay,
   Text,
   useDisclosure,
   BoxProps,
@@ -67,6 +68,7 @@ export default function SidebarWithHeader({
         returnFocusOnClose={false}
         onOverlayClick={onClose}
         size="full">
+        <DrawerOverlay />
         <DrawerContent>
           <SidebarContent onClose={onClose} />
         </DrawerContent>
@@ -87,7 +89,6 @@ interface SidebarProps extends BoxProps {
 const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
   return (
     <Box
-      transition="3s ease"
       bg={useColorModeValue('white', 'gray.900')}
       borderRight="1px"
       borderRightColor={useColorModeValue('gray.200', 'gray.700')}

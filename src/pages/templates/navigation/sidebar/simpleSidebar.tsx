@@ -8,6 +8,7 @@ import {
   useColorModeValue,
   Link,
   Drawer,
+  DrawerOverlay,
   DrawerContent,
   Text,
   useDisclosure,
@@ -53,6 +54,7 @@ export default function SimpleSidebar({ children }: { children: ReactNode }) {
         returnFocusOnClose={false}
         onOverlayClick={onClose}
         size="full">
+        <DrawerOverlay />
         <DrawerContent>
           <SidebarContent onClose={onClose} />
         </DrawerContent>
